@@ -24,7 +24,7 @@ We identified a set of architecture styles that are commonly found in cloud appl
 
 This section gives a quick tour of the architecture styles that we identified, along with some high-level considerations for their use. This list isn't exhaustive. Read more details in the linked articles.
 
-### N-tier
+### N-tiered architecture
 
 :::image type="complex" border="false" source="./images/n-tier-logical.svg" alt-text="Logical diagram of an N-tier architecture style." lightbox="./images/n-tier-logical.svg":::
    The diagram illustrates the layered structure of an N-tier architecture with clear separation between components. Client requests enter through a web application firewall (WAF) that provides security filtering before reaching the web tier. The web tier serves as the presentation layer. It handles user interactions and routing requests to appropriate business logic components. Two distinct processing paths emerge from the web tier: one path flows directly to middle tier one for synchronous operations, while another path uses messaging infrastructure to communicate with middle tier two for asynchronous processing. Both middle tiers represent business logic layers that process requests and interact with the data tier through caching mechanisms to optimize performance. The data tier serves as the foundation. It stores and manages application data while supporting both middle tiers through cached data access patterns.
